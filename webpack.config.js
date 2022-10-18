@@ -4,11 +4,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerWebpackPlugin = require("css-minimizer-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
-
 // =====================================================================
 
-const entryPoint = "./src/markup/index.js";
-const htmlTemplate = "./src/markup/index.html";
+const entryPoint = "./src/index.jsx";
+const htmlTemplate = "./src/index.html";
 
 const targetFolder = "prod";
 const targetImagesFolder = "assets";
@@ -61,11 +60,14 @@ function cssLoaders(moreLoaders = null) {
   return loaders;
 }
 
-function jsLoaders() {
-  return {
+function jsLoaders(auxLoader = null) {
+  const opts = {
     loader: "esbuild-loader",
     options: { target: "es2015" },
   };
+
+  if (auxLoader) opts.options.loader = auxLoader;
+  return opts;
 }
 
 function devServerOptions() {
@@ -97,6 +99,11 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: jsLoaders(),
+      },
+      {
+        test: /\.jsx$/,
+        exclude: /node_modules/,
+        use: jsLoaders("jsx"),
       },
       {
         test: /\.css$/,
