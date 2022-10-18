@@ -45,6 +45,12 @@ function cssLoaders(moreLoaders = null) {
     MiniCssExtractPlugin.loader,
     {
       loader: "css-loader",
+      options: {
+        modules: {
+          auto: /\.module\.\w+$/i,
+          localIdentName: isDevMode ? "[name]__[local]" : "[hash:base64]",
+        },
+      },
     },
     {
       loader: "postcss-loader",
@@ -92,6 +98,8 @@ module.exports = {
   devtool: generateSourceMap(),
   optimization: optimizationOptions(isProdMode),
   devServer: devServerOptions(),
+
+  resolve: { extensions: [".js", ".jsx"] },
 
   module: {
     rules: [
