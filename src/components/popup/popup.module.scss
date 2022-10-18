@@ -1,0 +1,105 @@
+@use "../../common.styles/variables.scss" as var;
+@use "../../common.styles/text.styles.scss" as typo;
+
+.popupContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: #b3bfcf80;
+}
+
+.popupContent {
+  position: relative;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: var.$sizeQuad;
+  background-color: #FFF;
+  border-radius: var.$sizeHalf;
+
+  padding: var.$sizeDouble var.$sizeNorm var.$sizeNorm;
+}
+
+.popupHeader {
+  margin-bottom: var.$sizeDouble;
+}
+
+.popupTitle {
+  @extend .overflow-ellipsis;
+  font-size: typo.$textHuge;
+  font-weight: typo.$fontRegular;
+}
+
+.popupDetails {
+  display: flex;
+  flex-direction: column;
+  gap: var.$sizeHalf;
+}
+
+.popupDetailsRow {
+  display: flex;
+}
+
+.popupDetailsCaption {
+  flex-basis: 40%;
+}
+
+.popupDetailsData {
+  flex-basis: 60%;
+}
+
+.popupText,
+.popupAuxText {
+  color: var.$gray;
+  font-size: typo.$textSmall;
+}
+
+.popupText {
+  @extend .overflow-ellipsis;
+}
+
+.popupPhone {
+  font-size: typo.$textNorm;
+}
+
+.popupPhone,
+.popupEmail {
+  text-decoration: underline;
+}
+
+.popupAuxTitle {
+  font-size: typo.$textNorm;
+  font-weight: typo.$fontRegular;
+  margin-bottom: var.$sizeHalf;
+}
+
+.popupFooter{
+  margin-top: var.$sizeDouble;
+}
+
+.popupClose {
+  position: absolute;
+  width: var.$sizeDouble;
+  height: var.$sizeDouble;
+  top: -(var.$sizeNorm);
+  left: calc(50% - var.$sizeNorm);
+
+  padding: 0;
+
+  background-color: var.$purple;
+  border-radius: var.$sizeNorm;
+  border: none;
+
+  background-image: url("../../assets/xmark-solid.svg");
+  background-position: center;
+  background-size: var.$sizeHalf;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: var.$purpleDark;
+  }
+}
