@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
 
 import { Container } from "../container/container";
+import { Search } from "../search/search";
 
 export function App() {
   return (
     <Container>
-      <h1>Привет, мир!</h1>
+      <Search clickHandler={() => console.log("Click")} />
     </Container>
   );
 }
