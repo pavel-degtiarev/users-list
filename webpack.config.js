@@ -99,6 +99,8 @@ module.exports = {
   optimization: optimizationOptions(isProdMode),
   devServer: devServerOptions(),
 
+  resolve: { extensions: [".js", ".jsx"] },
+
   module: {
     rules: [
       {
