@@ -1,0 +1,56 @@
+@use "../../common.styles/variables.scss" as var;
+@use "../../common.styles/text.styles.scss" as typo;
+
+.cardContainer {
+  min-width: 30%;
+  cursor: pointer;
+}
+
+.card {
+  padding: var.$sizeNorm;
+  border-radius: var.$sizeHalf;
+  box-shadow: 0 var.$sizeHalf var.$sizeNorm var.$grayLight;
+}
+
+.cardHeader {
+  margin-bottom: var.$sizeDouble;
+}
+
+.cardTitle {
+  @extend .overflow-ellipsis;
+  font-size: typo.$textBig;
+  font-weight: typo.$fontRegular;
+}
+
+.cardDetails {
+  margin-bottom: var.$sizeDouble;
+
+  & p:not(:last-child) {
+    margin-bottom: var.$sizeHalf;
+  }
+}
+
+.cardText {
+  @extend .overflow-ellipsis;
+  color: var.$gray;
+}
+
+.cardPhone,
+.cardEmail {
+  padding-left: var.$sizeNorm;
+
+  background-position: left center;
+  background-size: var.$sizeHalf;
+  background-repeat: no-repeat;
+}
+
+.cardPhone {
+  background-image: url("../../assets/mobile-screen-button-solid.svg");
+  font-size: typo.$textNorm;
+}
+
+.cardEmail {
+  background-image: url("../../assets/envelope-open-text-solid.svg");
+  font-size: typo.$textSmall;
+  text-decoration: underline solid;
+}
