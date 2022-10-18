@@ -1,0 +1,8 @@
+@use "./variables.scss" as var;
+
+.container {
+  width: 60vw;
+  max-width: 1200px;
+  margin: var.$sizeDouble auto;
+  padding: var.$sizeHalf;
+}

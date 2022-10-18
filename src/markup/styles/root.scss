@@ -1,0 +1,19 @@
+@use "./variables.scss" as var;
+@use "./text.styles.scss" as typo;
+
+:root {
+  font-family: "Open Sans", sans-serif;
+  font-weight: typo.$fontRegular;
+  font-size: typo.$textNorm;
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}

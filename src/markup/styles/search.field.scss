@@ -1,0 +1,37 @@
+@use "./variables.scss" as var;
+@use "./text.styles.scss" as typo;
+
+.search {
+  width: 100%;
+  height: var.$sizeDouble;
+  border-radius: var.$sizeNorm;
+  border: 1px solid var.$grayLight;
+  padding: var.$sizeHalf var.$sizeNorm;
+
+  display: flex;
+  gap: var.$sizeHalf;
+}
+
+.search__field {
+  flex-grow: 1;
+  border: none;
+  padding: 0;
+  font-size: typo.$textBig;
+}
+
+.search__button {
+  width: var.$sizeNorm;
+  border: none;
+  padding: 0;
+
+  background-color: var.$purple;
+  mask-image: url("assets/magnifying-glass-solid.svg");
+  mask-position: center;
+  mask-repeat: no-repeat;
+
+  cursor: pointer;
+
+  &:hover{
+    background-color: var.$purpleDark;
+  }
+}

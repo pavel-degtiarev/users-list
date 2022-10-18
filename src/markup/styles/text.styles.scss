@@ -1,0 +1,17 @@
+@use "./variables.scss" as var;
+
+$fontRegular: 400;
+$fontBold: 700;
+
+$textSmall: 14px;
+$textNorm: 16px;
+$textBig: 20px;
+$textHuge: 30px;
+
+$lhBig: 25px;
+
+.overflow-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
