@@ -1,0 +1,55 @@
+@use "./variables.scss" as var;
+@use "./text.styles.scss" as typo;
+
+.card-container {
+  cursor: pointer;
+}
+
+.card {
+  padding: var.$sizeNorm;
+  border-radius: var.$sizeHalf;
+  box-shadow: 0 var.$sizeHalf var.$sizeNorm var.$grayLight;
+}
+
+.card__header {
+  margin-bottom: var.$sizeDouble;
+}
+
+.card__title {
+  @extend .overflow-ellipsis;
+  font-size: typo.$textBig;
+  font-weight: typo.$fontRegular;
+}
+
+.card__details {
+  margin-bottom: var.$sizeDouble;
+
+  & p:not(:last-child) {
+    margin-bottom: var.$sizeHalf;
+  }
+}
+
+.card-text {
+  @extend .overflow-ellipsis;
+  color: var.$gray;
+}
+
+.card__phone,
+.card__email {
+  padding-left: var.$sizeNorm;
+
+  background-position: left center;
+  background-size: var.$sizeHalf;
+  background-repeat: no-repeat;
+}
+
+.card__phone {
+  background-image: url("assets/mobile-screen-button-solid.svg");
+  font-size: typo.$textNorm;
+}
+
+.card__email {
+  background-image: url("assets/envelope-open-text-solid.svg");
+  font-size: typo.$textSmall;
+  text-decoration: underline solid;
+}

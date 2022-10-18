@@ -1,0 +1,103 @@
+@use "./variables.scss" as var;
+@use "./text.styles.scss" as typo;
+
+.popup__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: #b3bfcf80;
+}
+
+.popup__content {
+  position: relative;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: var.$sizeQuad;
+  background-color: #FFF;
+  border-radius: var.$sizeHalf;
+
+  padding: var.$sizeDouble var.$sizeNorm var.$sizeNorm;
+}
+
+.popup__header {
+  margin-bottom: var.$sizeDouble;
+}
+
+.popup__title {
+  @extend .overflow-ellipsis;
+  font-size: typo.$textHuge;
+  font-weight: typo.$fontRegular;
+}
+
+.popup__details {
+  display: flex;
+  flex-direction: column;
+  gap: var.$sizeHalf;
+
+  margin-bottom: var.$sizeDouble;
+}
+
+.popup-details__row {
+  display: flex;
+}
+
+.popup-details__caption {
+  flex-basis: 40%;
+}
+
+.popup-details__data {
+  flex-basis: 60%;
+}
+
+.popup-text,
+.popup-aux__text {
+  color: var.$gray;
+  font-size: typo.$textSmall;
+}
+
+.popup-text {
+  @extend .overflow-ellipsis;
+}
+
+.popup-phone {
+  font-size: typo.$textNorm;
+}
+
+.popup-phone,
+.popup-email {
+  text-decoration: underline;
+}
+
+.popup-aux__title {
+  font-size: typo.$textNorm;
+  font-weight: typo.$fontRegular;
+  margin-bottom: var.$sizeHalf;
+}
+
+.popup__close {
+  position: absolute;
+  width: var.$sizeDouble;
+  height: var.$sizeDouble;
+  top: -(var.$sizeNorm);
+  left: calc(50% - var.$sizeNorm);
+
+  padding: 0;
+
+  background-color: var.$purple;
+  border-radius: var.$sizeNorm;
+  border: none;
+
+  background-image: url("assets/xmark-solid.svg");
+  background-position: center;
+  background-size: var.$sizeHalf;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: var.$purpleDark;
+  }
+}
