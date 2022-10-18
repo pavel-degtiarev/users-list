@@ -2,7 +2,7 @@
   "name": "globex-it-test-task",
   "version": "1.0.0",
   "description": "test task",
-  "main": "index.js",
+  "main": "index.jsx",
   "scripts": {
     "prod": "webpack --node-env=production",
     "dev": "webpack --node-env=development",
@@ -34,6 +34,8 @@
     "webpack-dev-server": "^4.10.1"
   },
   "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "reseter.css": "^2.0.0"
   }
 }
