@@ -10,6 +10,7 @@ export function PopupHeader({ name }) {
     </header>
   );
 }
+
 export function PopupDetailsRow({ caption, auxStyle = "", data }) {
   return (
     <div className={styles.popupDetailsRow}>
@@ -18,6 +19,7 @@ export function PopupDetailsRow({ caption, auxStyle = "", data }) {
     </div>
   );
 }
+
 export function PopupFooter({ text }) {
   return (
     <footer className={styles.popupFooter}>

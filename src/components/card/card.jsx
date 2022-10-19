@@ -4,8 +4,6 @@ import classNames from "classnames";
 import styles from "./card.module.scss";
 
 export function Card({ userData, clickHandler }) {
-  console.log("render Card");
-
   return (
     <li className={styles.cardContainer} onClick={() => clickHandler(userData)}>
       <article className={styles.card}>

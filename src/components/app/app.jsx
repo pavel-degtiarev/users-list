@@ -7,8 +7,6 @@ import { Search } from "../search/search";
 import { getUsersFromAPI } from "../../API/getUsers";
 
 export function App() {
-  console.log("render App");
-
   const [currentUser, setCurrentUser] = useState(null);
   const [users, setUsers] = useState([]);
   const [query, setQuery] = useState("");
@@ -16,11 +14,7 @@ export function App() {
   const searchHandler = useCallback((search) => setQuery(search), [setQuery]);
 
   useEffect(() => {
-    async function loadUsers() {
-      const users = await getUsersFromAPI(query);
-      setUsers(users);
-    }
-
+    const loadUsers = async () => setUsers(await getUsersFromAPI(query));
     loadUsers();
   }, [query]);
 

@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import styles from "./search.field.module.scss";
 
 export const Search = memo(function Search({ clickHandler }) {
-  console.log("render Search");
 
   const inputRef = useRef(null);
 
