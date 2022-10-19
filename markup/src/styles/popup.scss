@@ -2,7 +2,7 @@
 @use "./text.styles.scss" as typo;
 
 .popup__container {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
