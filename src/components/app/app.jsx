@@ -6,24 +6,23 @@ import { Search } from "../search/search";
 
 import { getUsersFromAPI } from "../../API/getUsers";
 
-// const users = getUsers();
-
 export function App() {
   console.log("render App");
 
   const [currentUser, setCurrentUser] = useState(null);
   const [users, setUsers] = useState([]);
+  const [query, setQuery] = useState("");
 
-  const searchHandler = useCallback(() => console.log("Search clicked"), []);
+  const searchHandler = useCallback((search) => setQuery(search), [setQuery]);
 
   useEffect(() => {
     async function loadUsers() {
-      const users = await getUsersFromAPI();
+      const users = await getUsersFromAPI(query);
       setUsers(users);
     }
 
     loadUsers();
-  }, []);
+  }, [query]);
 
   return (
     <Container>
