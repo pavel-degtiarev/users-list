@@ -6,9 +6,11 @@
   height: var.$sizeDouble;
   border-radius: var.$sizeNorm;
   border: 1px solid var.$grayLight;
-  padding: var.$sizeHalf var.$sizeNorm;
+  padding: var.$sizeHalf;
+  padding-left: var.$sizeNorm;
 
   display: flex;
+  align-items: center;
   gap: var.$sizeHalf;
 }
 
@@ -21,17 +23,21 @@
 
 .searchButton {
   width: var.$sizeNorm;
+  height: var.$sizeNorm;
+  border-radius: var.$sizeHalf;
   border: none;
   padding: 0;
-
+  
   background-color: var.$purple;
-  mask-image: url("../../assets/magnifying-glass-solid.svg");
-  mask-position: center;
-  mask-repeat: no-repeat;
+
+  background-image: url("../../assets/magnifying-glass-solid.svg");
+  background-position: center;
+  background-size: var.$sizeHalf;
+  background-repeat: no-repeat;
 
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     background-color: var.$purpleDark;
   }
 }
