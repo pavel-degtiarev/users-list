@@ -9,7 +9,7 @@ export async function getUsersFromAPI(query = "") {
     data = (await res.json()).map((user) => mapUserData(user));
     
   } catch (error) {
-    throw new Error("Не читаются данные с сервера!");
+    console.error("Не читаются данные с сервера!");
   }
 
   return data;
