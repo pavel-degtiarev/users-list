@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import PropTypes from "prop-types";
 
 import { PopupHeader, PopupDetailsRow, PopupFooter } from "./popup.components";
@@ -15,9 +15,16 @@ export function Popup({
   auxText = "",
   closeHandler,
 }) {
+  const insidePopupRef = useRef(null);
+
+  function closeClickedOutside(e) {
+    if (insidePopupRef.current.contains(e.target)) return;
+    closeHandler();
+  }
+
   return (
-    <section className={styles.popupContainer}>
-      <div className={styles.popupContent}>
+    <section className={styles.popupContainer} onClick={closeClickedOutside}>
+      <div className={styles.popupContent} ref={insidePopupRef}>
         <PopupHeader name={name} />
 
         <div className={styles.popupDetails}>
